@@ -1,0 +1,16 @@
+Hi  {{ user.username }},
+
+Your user account with the e-mail address {{ user.email }}, has been created.
+
+Please follow the link below to activate your account. The link will remain valid for only few days.
+
+Click here:
+    {{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+Your Login credentials are:
+    Email: <strong> {{ email }}
+    Password: <strong> {{ password }}
+
+You will be able to change your settings (password, language, etc.) once your account is activated.
+
+If you have not requested resetting your password, you can just delete this email.

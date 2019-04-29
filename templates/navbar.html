@@ -1,0 +1,44 @@
+<nav class="navbar solid nav-wrapper-light navbar-expand-lg center justify-content-between text-uppercase">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-brand d-lg-none d-xl-none"><a href="/"><img src="/static/style/images/logo.png" style="max-height: 60px" alt="" /></a></div>
+        <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
+      </div>
+      <!-- /.navbar-header -->
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav-wrapper">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link dropdown-toggle" href="/portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link dropdown-toggle" href="/about">About</a>
+            </li>
+          </ul>
+          <!-- /.navbar-nav -->
+        </div>
+        <div class="navbar-brand d-none d-lg-block"><a href="/"><img src="/static/style/images/logo.png" style="max-height: 60px" alt="" /></a></div>
+        <div class="navbar-nav-wrapper">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link dropdown-toggle" href="/contact">Contact Us</a>
+            </li>
+
+{#            <li class="nav-item"><a class="nav-link dropdown-toggle" href="/booking">Booking</a>#}
+{#            </li>#}
+            {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link dropdown-toggle" href="{% url 'profile' user.username %}">Profile</a>
+            </li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
+                </li>
+            {% else %}
+                  <li class="nav-item"><a class="nav-link" href="/login">Login</a>
+                </li>
+              {% endif %}
+          </ul>
+          <!-- /.navbar-nav -->
+        </div>
+        <!-- /.navbar-nav-wrapper -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>

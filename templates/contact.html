@@ -1,0 +1,98 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+    {% block title %}
+            <title>Contact Form</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+        <div class="wrapper light-wrapper">
+        <div class="container inner">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <h2 class="section-title text-center">Contact Information</h2>
+                <ul class="icon-list list-inline text-center">
+                <li class="list-inline-item"><i class="fa fa-map"></i>{{ about.Address }}</li>
+                <li class="list-inline-item"><i class="fa fa-envelope"></i><a href="mailto:first.last@email.com" class="nocolor">{{ about.email }}</a></li>
+                <li class="list-inline-item"><i class="fa fa-phone-square"></i>
+                    {{ about.Mobile_number }}
+                </li>
+              </ul>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+          <div class="space30"></div>
+          <div class="row gutter-40">
+                  <div class="container">
+              <div class="form-container">
+                <form method="post">
+                    {% csrf_token %}
+                  <div class="row">
+                    <div class="col-md-6 pr-10">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="id_name" placeholder="Your name" required="required">
+                      </div>
+                      <!--/.form-group -->
+                    </div>
+                    <!--/column -->
+                    <div class="col-md-6 pl-10">
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="from_email" id="id_from_email" placeholder="Your e-mail" required="required">
+                      </div>
+                      <!--/.form-group -->
+                    </div>
+                    <!--/column -->
+                    <div class="col-md-6 pr-10">
+                      <div class="form-group">
+                        <input type="tel" class="form-control" id="id_phone" name="phone" placeholder="Phone">
+                      </div>
+                      <!--/.form-group -->
+                    </div>
+                    <!--/column -->
+                    <div class="col-md-6 pl-10">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="id_subject" placeholder="Subject">
+                      </div>
+                      <!--/.form-group -->
+                    </div>
+                    <!--/column -->
+                    <div class="col-12">
+                      <textarea name="message" class="form-control" id="id_message" rows="3" placeholder="Type your message here..." required=""></textarea>
+                      <div class="space20"></div>
+                        <br/>
+                      <button type="submit" class="btn btn-full-rounded state-initial" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!" data-initial="" value="">Submit</button>
+                      <footer class="notification-box"></footer>
+                    </div>
+                    <!--/column -->
+                  </div>
+                  <!--/.row -->
+                </form>
+                <!--/.vanilla-form -->
+              </div>
+              <!--/.form-container -->
+            </div>
+
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+    {% endblock %}
+
+    {% block javascript %}
+        <script src="{% static "style/js/jquery.min.js" %}"></script>
+        <script src="{% static "style/js/popper.min.js" %}"></script>
+        <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+    {% endblock %}
+
+

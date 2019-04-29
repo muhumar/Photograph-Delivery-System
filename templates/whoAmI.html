@@ -1,0 +1,55 @@
+{% load staticfiles %}
+      <div class="wrapper light-wrapper">
+        <div class="container inner">
+          <h2 class="section-title text-center">Who am I?</h2>
+          <p class="lead2 text-center">I turn ideas into beautiful things</p>
+          <div class="space30"></div>
+          <div class="row">
+            <div class="col-lg-7">
+              <h3>A Little About Me</h3>
+              <div class="space10"></div>
+              <div class="row">
+                <div class="col-md-5">
+                  <figure><img src="{{ about_me.image.url }}"  alt=""></figure>
+                </div>
+                <div class="col-md-7">
+                  <p>
+                      {{ about_me.detail }}
+                  </p>
+                  <footer class="blockquote-footer">{{ about_me.name }}</footer>
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!--/column -->
+            <div class="space30 d-lg-none d-xl-none"></div>
+            <div class="col-lg-5">
+              <h3>My Skills</h3>
+              <div class="space10"></div>
+              <ul class="progress-list">
+                <li>
+                  <p>{{ about_me.skill1Name }}</p>
+                  <div class="progressbar line default" data-value="{{ about_me.skill1Percentage }}"></div>
+                </li>
+                <li>
+                  <p>{{ about_me.skill2Name }}</p>
+                  <div class="progressbar line default" data-value="{{ about_me.skill2Percentage }}"></div>
+                </li>
+                <li>
+                  <p>{{ about_me.skill3Name }}</p>
+                  <div class="progressbar line default" data-value="{{ about_me.skill3Percentage }}"></div>
+                </li>
+                <li>
+                  <p>{{ about_me.skill4Name }}</p>
+                  <div class="progressbar line default" data-value="{{ about_me.skill4Percentage }}"></div>
+                </li>
+              </ul>
+              <!-- /.progress-list -->
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </div>

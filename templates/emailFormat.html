@@ -1,0 +1,21 @@
+{% autoescape off %}
+Hi <strong>{{ user.username }}</strong>,
+</p>
+
+<strong>{{ Name }} </strong> has sent you a message through your website: <strong>{{ domain }}</strong>
+
+<p>   Sender Name is : <strong>{{ Name }}</strong>
+</p>
+<p>   Sender Phone is : <strong>{{ Phone }}</strong>
+</p>
+<p>   Sender Email is : <strong>{{ From_Email }}</strong>
+</p>
+<p>   Sender name is : <strong>{{ Name }}</strong>
+</p>
+<p>   Subject of this contact is : <strong>{{ Subject }}</strong>
+</p>
+<p>   Description: </p>
+<p>
+    {{ message }}
+</p>
+{% endautoescape %}

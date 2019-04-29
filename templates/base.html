@@ -1,0 +1,143 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="text" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="static/style/images/favicon.ico"/>
+    <link rel="shortcut icon" href="style/images/favicon.png">
+    {% block title %}
+        <title>Brailie</title>
+    {% endblock %}
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/plugins.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/settings.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+       <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/color/pink.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+    <div class="content-wrapper">
+      {% include "navbar.html" %}
+
+    {% block content %}
+      <!-- slider -->
+      {% include "slider.html" %}
+
+      <!-- /.wrapper specialties -->
+      {% include "specialties.html" %}
+
+      <!-- /.wrapper -->
+      <div class="wrapper gray-wrapper">
+        <div class="container inner pb-30">
+          <h2 class="section-title text-center">My Featured Shots</h2>
+          <p class="lead2 text-center">Here you will be able to find my latest works</p>
+        </div>
+        <!-- /.container -->
+        <div id="cube-grid-mosaic-filter" class="cbp-filter-container text-center">
+          <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
+            {% for obj in category_objects %}
+                <div data-filter=".{{ obj.slug }}" class="cbp-filter-item">{{ obj.title }}</div>
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="space20"></div>
+        <div id="cube-grid-mosaic" class="cbp light-gallery">
+            {% for obj in category_objects %}
+              {% for portfolio_obj in obj.portfolio.all|slice:"0:3" %}
+                  <div class="cbp-item {{ obj.slug }}">
+                    <figure class="overlay overlay2">
+                        <a href="{{ portfolio_obj.large_image.url }}" data-sub-html="#caption1">
+                        <img src="{{ portfolio_obj.thumbnail_image.url }}" alt="" />
+                          <div id="caption1" class="d-none">
+                              <p>{{ portfolio_obj.title }}</p>
+                          </div>
+                        </a>
+                    </figure>
+                  </div>
+              {% endfor %}
+            {% endfor %}
+          <!--/.cbp-item -->
+        </div>
+        <!--/.cbp -->
+      </div>
+
+      <!-- /.wrapper WhoAmI -->
+      {% include "whoAmI.html" %}
+
+      <!-- /.wrapper -->
+      {% include "info.html" %}
+
+      <!-- /.wrapper -->
+      <div class="wrapper light-wrapper">
+        <div class="container inner">
+          <!--/.row -->
+          <div class="space70"></div>
+          <div class="row">
+            <div class="col-lg-3">
+              <h3 class="text-center-sm text-center-xs">My Working Process</h3>
+              <p class="text-center-sm text-center-xs">Integer posuere ante dapibus posuere aliquet non porta gravida eget metus.</p>
+            </div>
+            <!--/column -->
+            <div class="space30 d-lg-none d-xl-none"></div>
+            <div class="col-lg-9">
+              <div class="row gutter-50 process-wrapper arrow text-center">
+                <div class="col-md-3"> <span class="icon icon-bg bg-default mb-20"><span class="number">01</span></span>
+                  <h5>Concept</h5>
+                </div>
+                <!--/column -->
+                <div class="col-md-3"> <span class="icon icon-bg bg-default mb-20"><span class="number">02</span></span>
+                  <h5>Prepare</h5>
+                </div>
+                <!--/column -->
+                <div class="space20 d-md-none clearfix"></div>
+                <div class="col-md-3"> <span class="icon icon-bg bg-default mb-20"><span class="number">03</span></span>
+                  <h5>Retouch</h5>
+                </div>
+                <!--/column -->
+                <div class="col-md-3"> <span class="icon icon-bg bg-default mb-20"><span class="number">04</span></span>
+                  <h5>Finalize</h5>
+                </div>
+                <!--/column -->
+              </div>
+              <!--/.row -->
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+
+      <!-- /.wrapper Insta -->
+{#      {% include "instafeed.html" %}#}
+
+    {% endblock %}
+
+      {% include "footer.html" %}
+    </div>
+    <!-- /.content-wrapper -->
+    {% block javascript %}
+        <script src="{% static "style/js/jquery.min.js" %}"></script>
+        <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/extensions/revolution.extension.carousel.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/extensions/revolution.extension.layeranimation.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/extensions/revolution.extension.navigation.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/extensions/revolution.extension.slideanims.min.js" %}"></script>
+        <script src="{% static "style/js/plugins.js" %}"></script>
+        <script src="{% static "style/js/scripts.js" %}"></script>
+    {% endblock %}
+</body>
+
+</html>

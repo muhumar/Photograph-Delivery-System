@@ -1,0 +1,12 @@
+{% autoescape off %}
+Hi {{ user.username }},
+
+{{ Name }} has sent you a message through your website: {{ domain }}
+
+    Sender Name is : {{ Name }}
+    Sender Phone is : {{ Phone }}
+    Sender Email is : {{ From_Email }}
+    Sender name is : {{ Name }}
+    Subject of this contact is : {{ Subject }}
+    And Description of message is : {{ message }}
+{% endautoescape %}

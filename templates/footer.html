@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<footer class="dark-wrapper inverse-text">
+        <div class="sub-footer">
+          <div class="container inner text-center">
+{#               <img src="#" srcset={% static "style/images/logo.png" %} 1x, {% static "style/images/logo-light@2x.png 2x"%}" alt="" />#}
+            <div class="space25"></div>
+            <p>© 2019 Heritage Media. All rights reserved.</p>
+            <div class="space30" style="margin: 0.5em"></div>
+            <ul class="social social-bg social-s">
+              <li><a href="{{ about_me.FlickLink }}"><i class="fa fa-flickr"></i></a></li>
+              <li><a href="{{ about_me.FacebookLink }}"><i class="fa fa-facebook-f"></i></a></li>
+              <li><a href="{{ about_me.PinterestLink }}"><i class="fa fa-pinterest"></i></a></li>
+              <li><a href="{{ about_me.VimeoLink }}"><i class="fa fa-vimeo"></i></a></li>
+              <li><a href="{{ about_me.InstagramLink }}"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+{#<div style="margin: 0.5em">#}
+{#              <a href="/about">About</a>&nbsp&nbsp#}
+{#              <a href="/privacy_policy">Privacy Policy</a>&nbsp&nbsp#}
+{#              <a href="/contact">Contact</a>#}
+{#</div>#}
+          </div>
+
+
+          <!-- /.container -->
+        </div>
+        <!-- /.sub-footer -->
+      </footer>

@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<div class="wrapper light-wrapper">
+        <div class="container inner">
+          <h2 class="section-title section-title-upper text-center">My Specialties</h2>
+          <p class="lead larger text-center">
+              Whatever the story is that you need to tell, we are committed to helping you do it through stunning images.
+          </p>
+          <div class="space30"></div>
+          <div class="tiles">
+            <div class="items row">
+                {% for obj in specialties %}
+                    <div class="item col-md-4">
+                <figure class="overlay-info bordered"><img src="{{ obj.imageForSpecialties.url }}" alt="">
+                  <figcaption class="d-flex">
+                    <div class="align-self-center mx-auto">
+                      <h4 class="text-uppercase mb-0">{{ obj.title }}<br>
+                        Photography</h4>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+              {% endfor %}
+            </div>
+            <!--/.row -->
+            <!--/.row -->
+          </div>
+          <!-- /.tiles -->
+        </div>
+        <!-- /.container -->
+      </div>

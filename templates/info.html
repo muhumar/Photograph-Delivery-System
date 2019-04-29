@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/static/style/images/about_back.jpg"
+style="background-image: url(&quot;/static/style/images/about_back.jpg&quot;);">
+        <div class="container inner pt-120 pb-120">
+          <div class="row counter">
+            <div class="col-md-3 text-center">
+              <div class="icon fs-54 icon-color color-dark mb-15"> <i class="si-photo_camera"></i> </div>
+              <h3 class="value">{{ about_me.ShotsTaken }}</h3>
+              <p class="text-uppercase color-dark mb-0">Shots Taken</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-3 text-center">
+              <div class="icon fs-54 icon-color color-dark mb-15"> <i class="si-cafe_hot-coffee"></i> </div>
+              <h3 class="value">{{ about_me.CupsOfCoffe }}</h3>
+              <p class="text-uppercase color-dark mb-0">Cups of Coffee</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-3 text-center">
+              <div class="icon fs-54 icon-color color-dark mb-15"> <i class="si-electronics_tv"></i> </div>
+              <h3 class="value">{{ about_me.VideosEdited }}</h3>
+              <p class="text-uppercase color-dark mb-0">Videos Edited</p>
+            </div>
+            <!--/column -->
+            <div class="col-md-3 text-center">
+              <div class="icon fs-54 icon-color color-dark mb-15"> <i class="si-sports_medal-2"></i> </div>
+              <h3 class="value">{{ about_me.AwardsWon }}</h3>
+              <p class="text-uppercase color-dark mb-0">Awards Won</p>
+            </div>
+            <!--/column -->
+          </div>
+          <!--/.row -->
+        </div>
+        <!-- /.container -->
+      </div>

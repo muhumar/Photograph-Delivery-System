@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+    {% block title %}
+        <title>Portfolio</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/plugins.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/settings.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+       <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/color/pink.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+  <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/static/style/images/portfolio.jpg"  style="background-image: url(&quot;/static/style/images/portfolio.jpg&quot;);">
+        <div class="container inner pt-120 pb-120 text-center">
+          <h1 class="heading">My Latest Works</h1>
+          <p class="lead larger text-center mb-0">Minimalism meets photography</p>
+        </div>
+        <!-- /.container -->
+      </div>
+      <div class="wrapper light-wrapper">
+        <div class="container inner">
+          <div class="collage-wrapper">
+            <div id="collage-medium" class="collage effect-parent light-gallery">
+                {% for obj in portfolio_objects %}
+                <!-- /.collage-image-wrapper -->
+                <div class="collage-image-wrapper effect-2 effect-duration-2" style="width: 477px; height: 326px; margin-bottom: 0px; margin-right: 0px; display: inline-block; vertical-align: bottom; overflow: hidden; opacity: 0;">
+                    <div class="overlay overlay2">
+                        <a href="{{ obj.large_image.url }}" data-sub-html="#caption4">
+                            <span class="bg"></span>
+                            <img src="{{ obj.thumbnail_image.url }}" style="width: 497px; height: 346px;" alt="">
+                        </a>
+                        <div id="caption4" class="d-none">
+                            <p>{{ obj.title }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            <!-- /.collage -->
+          </div>
+          <!-- /.collage-wrapper -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.wrapper -->
+
+    </div>
+    {% endblock %}
+
+    {% block javascript %}
+        <script src="{% static "style/js/jquery.min.js" %}"></script>
+        <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+        <script src="{% static "style/js/plugins.js" %}"></script>
+        <script src="{% static "style/js/scripts.js" %}"></script>
+    {% endblock %}
+
+
+
+

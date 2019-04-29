@@ -1,0 +1,27 @@
+<p>
+    Hi  <strong>{{ user.username }}</strong>,
+</p>
+
+<p>
+    Your user account with the e-mail address <strong>{{ user.email }}</strong>, has been created.
+    Please click here to activate your account:
+</p>
+
+<p>
+<strong>
+    <u>{{ domain }}{% url 'activate' uidb64=uid token=token %}</u>
+</strong></p>
+
+<p>_</p>
+
+<p>
+    Your <strong>Login credentials</strong> are:
+    <p>Email: <strong> {{ email }} </strong>  </p>
+    <p>Password: <strong> {{ password }} </strong> </p>
+</p>
+
+<p>_</p>
+<p>
+    You will be able to change your settings (password, etc.) once your account is activated.
+    <strong>If you have not requested resetting your password, you can just delete this email.</strong>
+</p>

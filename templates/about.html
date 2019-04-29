@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+    {% block title %}
+        <title>About Us</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+        <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/static/style/images/about_back.jpg"  style="background-image: url(&quot;/static/style/images/about_back.jpg&quot;);">
+        <div class="container inner pt-120 pb-120 text-center">
+          <h1 class="heading mb-0">About Me</h1>
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.wrapper -->
+      <div class="wrapper light-wrapper">
+        <div class="container inner">
+          <h2 class="section-title mb-40 text-center">Who is Behind All This?</h2>
+          <div class="row">
+            <div class="col-lg-6 text-md-center">
+              <figure><img src="{{ about_me.image.url }}" alt=""></figure>
+            </div>
+            <!-- /column -->
+            <div class="space30 d-block d-lg-none d-xl-none"></div>
+            <div class="col-lg-6">
+              <p>
+                  {{ about_me.detail }}
+              </p>
+                <ul class="social social-color social-s mb-15">
+                  <li><a href="{{ about_me.FlickLink }}"><i class="fa fa-flick"></i></a></li>
+                  <li><a href="{{ about_me.FacebookLink }}"><i class="fa fa-facebook-f"></i></a></li>
+                  <li><a href="{{ about_me.PinterestLink }}"><i class="fa fa-pinterest"></i></a></li>
+                  <li><a href="{{ about_me.VimeoLink }}"><i class="fa fa-vimeo"></i></a></li>
+                  <li><a href="{{ about_me.InstagramLink }}"><i class="fa fa-instagram"></i></a></li>
+              </ul>
+            </div>
+            <!-- /column -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.wrapper -->
+      {% include "info.html" %}
+    {% endblock %}
+
+    {% block javascript %}
+
+        <script src="{% static "style/js/jquery.min.js" %}"></script>
+    <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "style/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+    <script src="{% static "style/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+
+    <script src="{% static "style/js/plugins.js" %}"></script>
+    <script src="{% static "style/js/scripts.js" %}"></script>
+
+    {% endblock %}

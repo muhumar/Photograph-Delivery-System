@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<div class="rev_slider_wrapper fullscreen-container">
+        <div id="slider11" class="rev_slider fullscreenbanner bg-dark" data-version="5.4.7">
+          <ul>
+            {% for obj in category_objects %}
+                <li data-transition="fade" data-thumb="{{ obj.imageForSlider.url }}">
+                    <img src="{{ obj.imageForSlider.url }}" alt="" />
+              <div class="tp-caption font-title font-weight-700 text-uppercase color-white tp-resizeme" id="slide-2-layer-1"
+                data-x="['center','center','center','center']"
+                data-y="['middle','middle','middle','middle']"
+                data-voffset="['-50','-50,'-50','-50']"
+                data-fontsize="['55','55','55','35']"
+                data-lineheight="['65','65','65','45']"
+                data-width="none"
+                data-height="none"
+                data-whitespace="nowrap"
+                data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":0,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                data-responsive="on"
+                data-responsive_offset="on" style="z-index: 9; letter-spacing: 5px;">{{ obj.title }}</div>
+              <a class="tp-caption font-title btn btn-full-rounded btn-l btn-white" id="slide-2-layer-2"
+                data-x="['center','center','center','center']"
+                data-y="['middle','middle','middle','middle']"
+                data-voffset="['50','50,'50','50']"
+                data-width="['auto','auto','auto','auto']"
+                data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                data-responsive="on"
+                data-responsive_offset="on"
+                style="z-index: 9;" href="{{ obj.get_absolute_url }}">View Photos</a></li>
+            {% endfor %}
+          </ul>
+          <div class="tp-bannertimer tp-bottom"></div>
+        </div>
+        <!-- /.rev_slider -->
+      </div>

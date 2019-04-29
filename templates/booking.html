@@ -1,0 +1,131 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+    {% block title %}
+        <title>Booking</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/plugins.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/layers.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link rel="stylesheet" href="{% static "booking/css/booking.css"%}" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+        <h1 style="color:white">
+            <span>B</span>ooking
+            <span>F</span>orm
+        </h1>
+        <div class="main-content-agile">
+            <div class="sub-main-w3">
+                <form action="#" method="post">
+                    <div class="form-style-agile">
+                        <label>Your Name</label>
+                        <input placeholder="Your Name" name="Name" type="text" required="">
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Your Email</label>
+                            <input placeholder="Your Email" name="Email" type="email" required="">
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Contact Number</label>
+                            <input placeholder="Contact Number" name="Number" type="text" required="">
+                        </div>
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Select Date</label>
+                            <input id="datepicker" placeholder="Select Date" name="date" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+                                required="">
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Select Time</label>
+                            <input type="text" id="timepicker" name="time" class="timepicker form-control" placeholder="Select Time" value=""  required="">
+                        </div>
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>How many photographers have to need?</label>
+                            <select class="category" required="">
+                                <option value="">Choose photographers</option>
+                                <option value="">One</option>
+                                <option value="">Two</option>
+                                <option value="">More Than Two</option>
+                            </select>
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>How Many Hours of Coverage</label>
+                            <select class="category" required="">
+                                <option value="">Select Hours</option>
+                                <option value="">2 Hours</option>
+                                <option value="">3 Hours</option>
+                                <option value="">6 Hours</option>
+                                <option value="">Unsure</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-style-agile">
+                        <label>My Photography Budget</label>
+                        <select class="category" required="">
+                            <option value="">Choose Your Budget</option>
+                            <option value="">Under $20000</option>
+                            <option value="">$20000 - $30000</option>
+                            <option value="">$30000 - $40000</option>
+                            <option value="">$40000 - $50000</option>
+                            <option value="">$50000 - $60000</option>
+                            <option value="">$60000 - $100000</option>
+                        </select>
+                    </div>
+                    <div class="form-style-agile">
+                        <label>Any other important Info</label>
+                        <textarea name="Message" placeholder="Your Message..." required=""></textarea>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <!-- content -->
+        <br>
+    {% endblock %}
+
+
+    {% block javascript %}
+            <script src="{% static "style/js/jquery.min.js" %}"></script>
+    <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "style/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+    <script src="{% static "style/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+
+    <script src="{% static "style/revolution/js/extensions/revolution.extension.navigation.min.js" %}"></script>
+    <script src="{% static "style/js/plugins.js" %}"></script>
+    <script src="{% static "style/js/scripts.js" %}"></script>
+	<!-- date-->
+	<link rel="stylesheet" href="{% static "booking/css/jquery-ui.css" %}" />
+	<script src="{% static "booking/js/jquery-ui.js"%}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1").datepicker();
+		});
+	</script>
+	<!-- //date -->
+
+	<!-- time -->
+	<script src="{% static "booking/js/wickedpicker.js" %}"></script>
+	<script>
+		$('.timepicker').wickedpicker({
+			twentyFour: false
+		});
+	</script>
+
+
+	<link href="{% static "booking/css/wickedpicker.css"%}" rel="stylesheet" type='text/css' media="all" />
+	<!--//time -->
+
+    {% endblock %}

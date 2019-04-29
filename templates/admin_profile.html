@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+    {% block title %}
+        <title>Profile</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+        <br><br>
+
+        <h2 style="text-align: center;">
+            Hi, Admin
+        </h2>
+<br>
+
+
+        <div class="container">
+        {% if order_objects %}<br>
+
+       <h4 style="text-align: center;">
+            List of people who've paid their dues
+        </h4><br>
+
+            <table width="100%">
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount</th>
+              </tr>
+            {% for obj in order_objects %}
+              <tr>
+                <td>{{ obj.profile_name }}</td>
+                <td>{{ obj.profile_email }}</td>
+                <td>{{ obj.profile_amount }}</td>
+              </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+        </div>
+        <br><br><br>
+
+    {% endblock %}
+        <br>
+
+  {% block javascript %}
+        <script src="{% static "style/js/jquery.min.js" %}"></script>
+        <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+        <script src="{% static "style/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+        <script src="{% static "style/js/plugins.js" %}"></script>
+        <script src="{% static "style/js/scripts.js" %}"></script>
+  {% endblock %}
+
+
+
+

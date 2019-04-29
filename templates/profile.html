@@ -1,0 +1,112 @@
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+    {% block title %}
+        <title>Profile</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/plugins.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/settings.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/revolution/css/navigation.css' %}">
+       <link rel="stylesheet" type="text/css" href="{% static 'style/type/icons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/color/pink.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style/css/font/font5.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    {% endblock %}
+
+    {% block content %}
+
+    <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="{{ profile.image1.url }}" style="background-image: url(&quot;{{ profile.image1.url }}&quot;);">
+        <div class="container inner pt-250 pb-250 text-center">
+          <h1 class="heading">Hi, {{ request.user.username }}</h1>
+            <h5><a href="{% url 'change_password' %}" style="color: #00a6df">Change Password</a></h5>
+
+          {% if profile.is_allowed %}
+              <a href="{{ profile.drive_url }}" class="btn btn-white btn-full-rounded scroll">Download Images</a>
+
+          {% else %}
+               <p class="lead larger">
+              <a href="{% url 'main:payment-method' %}" style="color: beige">
+                  Pay <strong style="color: #00A0D1">{{ profile.amount }}</strong> Dollars to view your Photos
+                </a>
+              </p>
+              <div class="space10"></div>
+              <a href="{% url 'main:payment-method' %}" class="btn btn-white btn-full-rounded scroll">Buy Now</a>
+          {% endif %}
+        </div>
+        <!-- /.container -->
+    </div>
+
+<br>
+
+    <div class="container" style="text-align: center">
+        <h1>Your Images</h1>
+{#        <hr style="margin: auto;margin-top:1px;padding: 1px;width: 9%;border-top: 1.5px solid;">#}
+        {% if profile.is_allowed %}
+            <h6 style="color: #00a6df">
+                <a href="{{ profile.drive_url }}" style="color: #00a6df">Click here to download all your images</a>
+            </h6>
+            <p>
+                <u><a href="{{ profile.drive_url }}" style="color: blue">{{ profile.drive_url }}</a></u>
+            </p>
+            {% else %}
+                <h6 style="color: #00a6df">
+                <div>
+                    <a href="{% url 'main:payment-method' %}" class="btn btn-white btn-full-rounded scroll" style="background: #00a6df; color: white;">Buy Now: <strong>{{ profile.amount }} $</strong></a>
+                </div>
+                <div>
+{#                    <a href="{% url 'main:payment-method' %}" class="btn btn-white btn-full-rounded scroll" style="background: #00a6df; color: white;">Buy Now: <strong>{{ profile.amount }} $</strong></a>#}
+                </div>
+            </h6>
+        {% endif %}
+    </div>
+
+    <div class="wrapper light-wrapper inverse-text">
+    <div class="container-fluid">
+      <div class="swiper-container-wrapper swiper-auto-full ver1 aos-init aos-animate" data-aos="fade">
+        <div class="swiper-container text-center swiper-auto-full-0 swiper-container-horizontal" style="cursor: grabbing;">
+          <div class="swiper-wrapper" style="transform: translate3d(-8677.36px, 0px, 0px); transition-duration: 0ms;">
+             {% if profile.image1 %}
+              <div class="swiper-slide" style="margin-right: 15px;"> <img src="{{ profile.image1.url }}" alt=""> </div>
+              {% endif %}
+            {% if profile.image2 %}
+            <div class="swiper-slide" style="margin-right: 15px;"> <img src="{{ profile.image2.url }}" alt=""> </div>
+            {% endif %}
+            {% if profile.image3 %}
+            <div class="swiper-slide" style="margin-right: 15px;"> <img src="{{ profile.image3.url }}" alt=""> </div>
+            {% endif %}
+            {% if profile.image4 %}
+            <div class="swiper-slide" style="margin-right: 15px;"> <img src="{{ profile.image4.url }}" alt=""> </div>
+            {% endif %}
+          </div>
+          <!-- .swiper-wrapper -->
+        </div>
+        <!-- .swiper-container -->
+        <div class="swiper-button-next btn-next-0 swiper-button-disabled"></div>
+        <div class="swiper-button-prev btn-prev-0"></div>
+      </div>
+      <!-- .swiper-container-wrapper -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+
+    {% endblock %}
+
+    {% block javascript %}
+
+    <script src="{% static "style/js/jquery.min.js" %}"></script>
+    <script src="{% static "style/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "style/revolution/js/jquery.themepunch.tools.min.js" %}"></script>
+    <script src="{% static "style/revolution/js/jquery.themepunch.revolution.min.js" %}"></script>
+
+    <script src="{% static "style/js/plugins.js" %}"></script>
+    <script src="{% static "style/js/scripts.js" %}"></script>
+
+    {% endblock %}
+
+
+
+
