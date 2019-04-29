@@ -20,10 +20,6 @@ from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from account.models import Charge
 import stripe
-
-# stripe.api_key = "sk_live_TPfQtQLZYzR3yMskwIvFJ9Bi"
-#
-# STRIPE_PUB_KEY = "pk_live_wMwikXcsfnXy6rSkKlaQmAZP"
 stripe.api_key = "sk_test_P4xBmyb84tYPe0zbLXcMaYUl"
 
 STRIPE_PUB_KEY = "pk_test_sKrTiEjnIX8gipgtdTcc9LJw"
