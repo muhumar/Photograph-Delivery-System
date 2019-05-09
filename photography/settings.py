@@ -39,14 +39,6 @@ INSTALLED_APPS = [
     'account'
 ]
 
-PAYPAL_RECEIVER_EMAIL = 'billut123-facilitator@gmail.com'
-
-PAYPAL_TEST = True
-
-BRAINTREE_MERCHANT = '5ckrq3b6vkm9mrgn'
-BRAINTREE_PUBLIC_KEY = 'xsn64f5825bpw586'
-BRAINTREE_PRIVATE_KEY = '3f369748fedec4625c29fede15811298'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,17 +79,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'heritage_prod',
-#         'USER': 'u_heritage',
-#         'PASSWORD': 'bP6_U5X2Z]{gP.r,',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
