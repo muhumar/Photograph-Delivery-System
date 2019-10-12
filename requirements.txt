@@ -1,4 +1,0 @@
-Django==1.11.5
-django-jet==1.0.8
-Pillow==5.4.1
-pytz==2018.9
